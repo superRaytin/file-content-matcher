@@ -43,11 +43,9 @@ class FileContentMatcher {
 
   match(criteria = {}) {
     this.init(criteria)
-
     if (!this.path) {
       throw new Error('The path is required')
     }
-
     return this.readDirectory(this.path).then(() => this.filterFileContent())
   }
 
@@ -55,7 +53,6 @@ class FileContentMatcher {
     return new Promise((resolve, reject) => {
       fs.readdir(dir, (err, list) => {
         if (err) return reject(err)
-
         const filteredList = micromatch(list, this.negationFilter, this.micromatchOptions)
         Promise.all(filteredList.map((item) => this.applyFilter(sysPath.resolve(dir, item), depth))).then(() => {
           resolve()
@@ -101,9 +98,7 @@ class FileContentMatcher {
     if (!this.files.length || !this.filter.contentRegExp) {
       return Promise.resolve(this.files)
     }
-
     const readFileWrapper = (filePath) => this.readFileContent(filePath)
-
     return asyncPool(this.readFileConcurrency, this.files, readFileWrapper).then(res => res.filter(i => !!i))
   }
 }
