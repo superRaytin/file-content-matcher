@@ -9,7 +9,7 @@ class FileContentMatcher {
       filter: {
         namePatterns: [],
         contentRegExp: null,
-        readFileOptions: {
+        readOptions: {
           encoding: 'utf8',
           flag: 'r',
         },
@@ -90,7 +90,7 @@ class FileContentMatcher {
 
   readFileContent(filePath) {
     return new Promise((resolve, reject) => {
-      fs.readFile(filePath, this.filter.readFileOptions, (err, data) => {
+      fs.readFile(filePath, this.filter.readOptions, (err, data) => {
         if (err) return reject(err)
         resolve(this.filter.contentRegExp.test(data) ? filePath : null)
       })
