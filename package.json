@@ -1,12 +1,15 @@
 {
   "name": "file-content-matcher",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Search files recursively using content match.",
   "repository": {
     "type": "git",
     "url": "https://github.com/superraytin/contentmatch.git"
   },
   "main": "lib/index.js",
+  "bin": {
+    "file-content-matcher": "./bin/match.js"
+  },
   "scripts": {
     "lint": "eslint --ext .js src",
     "lint:fix": "eslint --fix --ext .js src",
@@ -23,7 +26,8 @@
   ],
   "dependencies": {
     "micromatch": "^4.0.4",
-    "tiny-async-pool": "1.2.0"
+    "tiny-async-pool": "1.2.0",
+    "commander": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
