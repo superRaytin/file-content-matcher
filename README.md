@@ -72,3 +72,9 @@ Below is an example:
 ```
 $ file-content-matcher -p ./test/testFiles -n "**/*.js,\!*.less" -c "Modal.*@\/components"
 ```
+
+## Test
+
+```
+npm test
+```
