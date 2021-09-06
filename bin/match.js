@@ -17,7 +17,7 @@ program
   .option('-p, --path <path>', 'set the path to be searched', process.cwd())
   .option('-n, --namePatterns <**/*.js,...>', 'set glob patterns for looking for files', list, [])
   .option('-c, --contentRegExp </test/i>', 'set regular expression to match file content', regexp, null)
-  .option('-d, --depth <number>', 'set the search recursively depth from the given path', 0)
+  .option('-d, --depth <number>', 'set the depth while searching recursively from the given path', 0)
   .option('-concurrency, --readFileConcurrency <number>', 'set the concurrency behavior for reading files', 1000)
   .parse(process.argv)
 
