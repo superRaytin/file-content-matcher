@@ -15,5 +15,5 @@ export default class FileContentMatcher {
      * Search files
      * @param options File search options
      */
-    public match(options: FileMatcherOptionsI): void;
+    public match(options: FileMatcherOptionsI): Promise<string[]>;
 }
