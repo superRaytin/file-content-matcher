@@ -1,8 +1,10 @@
+import type { Options } from 'micromatch'
+
 export interface FileMatcherOptionsI {
     path?: string;
     recursiveDepth?: number;
     readFileConcurrency?: number;
-    micromatchOptions?: any;
+    micromatchOptions?: Options;
     filter?: {
       namePatterns?: string[];
       contentRegExp?: string;
@@ -13,7 +15,7 @@ export interface FileMatcherOptionsI {
 export default class FileContentMatcher {
     /**
      * Search files
-     * @param options File search options.
+     * @param options File search options
      */
     public match(options: FileMatcherOptionsI): void;
 }
