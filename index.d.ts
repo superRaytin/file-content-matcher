@@ -1,10 +1,8 @@
-import type { Options } from 'micromatch'
-
 export interface FileMatcherOptionsI {
     path?: string;
     recursiveDepth?: number;
     readFileConcurrency?: number;
-    micromatchOptions?: Options;
+    micromatchOptions?: any;
     filter?: {
       namePatterns?: string[];
       contentRegExp?: string;
