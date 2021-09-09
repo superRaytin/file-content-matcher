@@ -7,6 +7,7 @@
     "url": "https://github.com/superraytin/contentmatch.git"
   },
   "main": "lib/index.js",
+  "types": "index.d.ts",
   "bin": {
     "file-content-matcher": "./bin/match.js"
   },
