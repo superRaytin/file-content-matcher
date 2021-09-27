@@ -2,7 +2,7 @@ export interface FileMatcherOptionsI {
   path?: string;
   recursiveDepth?: number;
   readFileConcurrency?: number;
-  micromatchOptions?: any;
+  micromatchOptions?: Record<string, unknown>;
   filter?: {
     namePatterns?: string[];
     contentRegExp?: RegExp;
