@@ -22,12 +22,14 @@ class FileContentMatcher {
 
   getNegationFilter() {
     const negationFilter = ['**/**']
-    if (this.filter.namePatterns) {
-      this.filter.namePatterns.forEach((item) => {
+    const namePatterns = this.filter.namePatterns
+    if (namePatterns) {
+      namePatterns.forEach((item) => {
         if (item.indexOf('!') === 0) {
           negationFilter.push(item)
         }
       })
+      this.filter.namePatterns = namePatterns.filter(item => item.indexOf('!') !== 0)
     }
     return negationFilter
   }
